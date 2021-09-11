@@ -4,11 +4,11 @@ exports.getOrders = (req, res) => {
     if(req.user.userType === "owner"){
       
     Order.find({ orderStages: req.params.statusFilter })
+      .populate("customerID", "phone userType")
+      .populate("deliveryPersonID", "phone userType")
       .then((orders) => {
         return res.status(200).json(orders);
       })
-      .populate("customerID", "phone userType")
-      .populate("deliveryPersonID", "phone userType")
       .catch((e) => {
         return res.status(422).json(e);
       });  
