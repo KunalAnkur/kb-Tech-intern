@@ -10,3 +10,5 @@
 -  `/api/assignOrder`
 -  `/api/orderStatus`
 -  `/api/updateStatus`
+
+### Deployed [here](https://order-anywhere-api.herokuapp.com/)
